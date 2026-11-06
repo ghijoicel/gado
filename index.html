@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; manifest-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0a0614">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<title>Neon Brawl — CinemaX Fighting</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="orbs" aria-hidden="true"><i></i><i></i></div>
+<main class="wrap">
+  <header class="top"><h1><span class="grad">Neon</span> Brawl</h1><p class="muted">Duel satu lawan satu. Pukul, tendang, blok, dan lepaskan Gelombang Neon!</p></header>
+  <div class="stage" id="stage">
+    <canvas id="cv" role="img" aria-label="Arena pertarungan neon dua petarung."></canvas>
+    <div class="hud">
+      <div class="side l"><span class="nm" id="n0">KAMU</span><div class="bar hp"><i class="ghost" id="g0"></i><i class="fill" id="h0"></i></div><div class="bar en"><i id="e0"></i></div><div class="pips" id="w0"></div></div>
+      <div class="mid"><b id="tm">60</b><small id="rd">RONDE 1</small></div>
+      <div class="side r"><span class="nm" id="n1">CPU</span><div class="bar hp"><i class="ghost" id="g1"></i><i class="fill" id="h1"></i></div><div class="bar en"><i id="e1"></i></div><div class="pips" id="w1"></div></div>
+    </div>
+    <div class="tools">
+      <button class="ib" id="bPause" type="button" aria-label="Jeda">⏸</button>
+      <button class="ib" id="bMute" type="button" aria-label="Suara">🔊</button>
+      <button class="ib" id="bFs" type="button" aria-label="Layar penuh">⛶</button>
+    </div>
+    <div class="banner" id="banner"></div>
+    <div class="ctrl" id="ctrl">
+      <div class="cl"><button class="cb" data-a="j" type="button" aria-label="Lompat">▲</button><div><button class="cb" data-h="l" type="button" aria-label="Kiri">◀</button><button class="cb" data-h="r" type="button" aria-label="Kanan">▶</button></div></div>
+      <div class="cr"><button class="cb" data-h="b" type="button" aria-label="Blok">🛡</button><button class="cb big" data-a="p" type="button" aria-label="Pukul">👊</button><button class="cb big" data-a="k" type="button" aria-label="Tendang">🦵</button><button class="cb sp" id="bSp" data-a="s" type="button" aria-label="Spesial">🔥</button></div>
+    </div>
+    <div class="overlay" id="ov">
+      <div class="panel">
+        <h2 id="ovT"></h2><p id="ovP" class="muted"></p>
+        <div id="sel">
+          <div class="seg" id="selMode" role="group" aria-label="Mode"><button type="button" data-m="1p" aria-pressed="true">1 Pemain</button><button type="button" data-m="2p" aria-pressed="false">2 Pemain</button></div>
+          <div class="seg" id="selLv" role="group" aria-label="Tingkat kesulitan"><button type="button" data-l="1" aria-pressed="false">Mudah</button><button type="button" data-l="2" aria-pressed="true">Normal</button><button type="button" data-l="3" aria-pressed="false">Sulit</button></div>
+        </div>
+        <button class="btn" id="btn" type="button"></button>
+        <ul class="keys muted small">
+          <li>📱 ◀ ▶ gerak · ▲ lompat · 🛡 tahan untuk blok · 👊 🦵 serang · 🔥 spesial (butuh energi ≥ 50%)</li>
+          <li>⌨️ P1: <kbd>A</kbd><kbd>D</kbd> gerak <kbd>W</kbd> lompat <kbd>S</kbd> blok <kbd>J</kbd> <kbd>K</kbd> <kbd>L</kbd> · P2: <kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> <kbd>,</kbd> <kbd>.</kbd> <kbd>/</kbd></li>
+          <li><kbd>F</kbd> layar penuh · <kbd>P</kbd> jeda · <kbd>M</kbd> suara</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rotate" id="rot">📱↻ Putar HP ke mode landscape untuk pengalaman terbaik</div>
+  </div>
+</main>
+<script src="assets/js/engine.js"></script>
+<script src="assets/js/game.js"></script>
+</body>
+</html>
